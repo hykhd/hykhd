@@ -99,5 +99,5 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: git@github.com:hykhd/hykhd.github.io.git
+  repo: git@hykhd.github.com:hykhd/hykhd.github.io.git
   branch: gh-pages

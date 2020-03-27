@@ -8,7 +8,7 @@ subtitle: ''
 description: ''
 keywords:
 author: hykhd
-language: zh-cn
+language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
@@ -101,3 +101,15 @@ deploy:
   type: 'git'
   repo: git@hykhd.github.com:hykhd/hykhd.github.io.git
   branch: gh-pages
+
+symbols_count_time:
+  symbols: true #是否统计字数
+  time: true #是否统计阅读时长
+  total_symbols: true #是否统计总字数
+  total_time: true #是否统计总阅读时长
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 100

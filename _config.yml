@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://hykhd.github.io
+url: https://www.hykhd.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -99,7 +99,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: 'git'
-  repo: git@hykhd.github.com:hykhd/hykhd.github.io.git
+  repo: git@github.com:hykhd/hykhd.git
   branch: gh-pages
 
 symbols_count_time:
@@ -108,8 +108,8 @@ symbols_count_time:
   total_symbols: true #是否统计总字数
   total_time: true #是否统计总阅读时长
 # 本地搜索
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 100
+# search:
+#   path: search.xml
+#   field: post
+#   format: html
+#   limit: 100

@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/egg_1f95a.png">
+  <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/egg_1f95a.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="hykhd">
+  <meta name="keywords" content="">
+  <title>饥荒服务器搭建 - 精致养生蛋</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/atom-one-dark-reasonable.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"www.hykhd.com","root":"/","version":"1.8.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>精致养生蛋</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="饥荒服务器搭建">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-27 08:53" pubdate>
+        2020年3月27日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">饥荒服务器搭建</h1>
+            
+            <div class="markdown-body">
+              <h1 id="1-游戏介绍"><a href="#1-游戏介绍" class="headerlink" title="1. 游戏介绍"></a>1. 游戏介绍</h1><p>《饥荒：联机版》是一款多人联机沙盒生存类游戏。多人联机时需要房主开房作为服务器，但是这样只有房主在线时，其他人才能进入房间。并且由于网络或配置的问题，其他人可能会出现延迟、丢包甚至掉线的糟糕游戏体验。因此使用独立的服务器来开服，可以大大提升游戏体验。</p>
+<h1 id="2-服务器选择"><a href="#2-服务器选择" class="headerlink" title="2. 服务器选择"></a>2. 服务器选择</h1><p>饥荒游戏只吃单核性能，因此加钱购买多核服务器收效甚微。因此购买单核1G内存的云服务器足以，国内可以考虑腾讯云和阿里云的学生机器。上行带宽官方给出的数据是<code>8Kbytes / player / s</code>,所以1M带宽足以。<br>系统选择上优先考虑饥荒官方教程中的Debian/Ubuntu，以减少不必要的麻烦。</p>
+<h1 id="3-依赖安装"><a href="#3-依赖安装" class="headerlink" title="3. 依赖安装"></a>3. 依赖安装</h1><p>搭建饥荒服务器需要：</p>
+<ul>
+<li>  SteamCMD</li>
+<li>  Don’t Starve Together</li>
+<li>  screen  </li>
+</ul>
+<h2 id="3-1-SteamCMD需要的依赖"><a href="#3-1-SteamCMD需要的依赖" class="headerlink" title="3.1. SteamCMD需要的依赖"></a>3.1. SteamCMD需要的依赖</h2><div class="hljs code-wrapper"><pre><code><figure class="highlight shell"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 需要root权限或者使用sudo</span><br><br><span class="hljs-meta">#</span><span class="bash"> 对于Debian/Ubuntu 64位系统：</span><br>apt-get install lib32gcc1<br><br><span class="hljs-meta">#</span><span class="bash"> RedHat/CentOS 32位系统：</span><br>yum install glibc libstdc++<br>yum -y install glibc.i686<br>yum install libcurl.so.4<br>yum install libstdc++.so.6<br><br><span class="hljs-meta">#</span><span class="bash"> RedHat/CentOS 64位系统:</span><br>yum install glibc.i686 libstdc++.i686<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h2 id="3-2-Don’t-Starve-Together需要的依赖"><a href="#3-2-Don’t-Starve-Together需要的依赖" class="headerlink" title="3.2. Don’t Starve Together需要的依赖"></a>3.2. Don’t Starve Together需要的依赖</h2><div class="hljs code-wrapper"><pre><code><figure class="highlight shell"><table><tr><td class="gutter hljs"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 同样需要root权限或者使用sudo</span><br><br><span class="hljs-meta">#</span><span class="bash"> 对于Debian/Ubuntu 64位系统</span><br>dpkg --add-architecture i386<br>apt-get update<br>apt-get install lib32gcc1<br>apt-get install lib32stdc++6<br>apt-get install libcurl4-gnutls-dev:i386<br></code></pre></div></td></tr></table></figure>
+</code></pre>
+<h2 id="3-3-下载SteamCMD"><a href="#3-3-下载SteamCMD" class="headerlink" title="3.3. 下载SteamCMD"></a>3.3. 下载SteamCMD</h2><p>建议使用非root账户来运行游戏服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell">adduser dst<br>su - dst<br><br><span class="hljs-meta">#</span><span class="bash"> 下载SteamCMD</span><br>mkdir steamcmd #创建目录用来存放SteamCMD<br>cd steamcmd<br>wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz<br>tar -xvzf steamcmd_linux.tar.gz<br><br><span class="hljs-meta">#</span><span class="bash"> 运行SteamCMD，匿名登陆，force_install_dir 后面加饥荒的下载目录</span><br>./steamcmd.sh +login anonymous +force_install_dir /home/dst/server_dst +app_update 343050 validate +quit<br></code></pre></div></td></tr></table></figure>
+
+<h1 id="4-运行Don’t-Starve-Together"><a href="#4-运行Don’t-Starve-Together" class="headerlink" title="4. 运行Don’t Starve Together"></a>4. 运行Don’t Starve Together</h1><figure class="highlight shell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">进入上一步饥荒的下载目录</span><br>cd /home/dst/server_dst/bin<br><span class="hljs-meta">#</span><span class="bash">创建地上世界服务器运行脚本</span><br>echo ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master &gt; start.sh<br><span class="hljs-meta">#</span><span class="bash">创建洞穴服务器运行脚本</span><br>echo ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves &gt; start2.sh<br><br>sh start.sh<br><span class="hljs-meta">#</span><span class="bash">第一次运行会出现Your Server Will Not Start，CTRL+C停止即可</span><br><br><span class="hljs-meta">#</span><span class="bash">如果不需要开洞穴，下面这行命令可以不运行</span><br>sh start2.sh<br><span class="hljs-meta">#</span><span class="bash">第一次运行会出现Your Server Will Not Start，CTRL+C停止即可</span><br></code></pre></div></td></tr></table></figure>
+<p>运行完成后会在<code>~/.klei/DoNotStarveTogether/</code>中生成<code>MyDediServer</code>目录，这是存档和配置的目录，包括地上和洞穴</p>
+<h1 id="5-服务器配置"><a href="#5-服务器配置" class="headerlink" title="5. 服务器配置"></a>5. 服务器配置</h1><h2 id="5-1-token文件"><a href="#5-1-token文件" class="headerlink" title="5.1. token文件"></a>5.1. token文件</h2><p>服务器运行需要token文件，token需要到游戏中生成,在电脑中打开饥荒游戏客户端。<br><img src="https://pages-1251923811.cos.ap-beijing.myqcloud.com/undefinedSnipaste_2020-03-27_15-50-57.png" srcset="/img/loading.gif" alt="Snipaste_2020-03-27_15-50-57.png"><br><img src="https://pages-1251923811.cos.ap-beijing.myqcloud.com/undefinedSnipaste_2020-03-27_15-53-22.png" srcset="/img/loading.gif" alt="Snipaste_2020-03-27_15-53-22.png"><br><img src="https://pages-1251923811.cos.ap-beijing.myqcloud.com/undefinedSnipaste_2020-03-27_15-57-26.png" srcset="/img/loading.gif" alt="Snipaste_2020-03-27_15-57-26.png"><br><img src="https://pages-1251923811.cos.ap-beijing.myqcloud.com/undefinedSnipaste_2020-03-27_16-11-47.png" srcset="/img/loading.gif" alt="Snipaste_2020-03-27_16-11-47.png"><br>得到token后在服务器中<code>~/.klei/DoNotStarveTogether/MyDediServer</code>目录下创建<code>cluster_token.txt</code>文件，并将token复制进去。  </p>
+<h2 id="5-2-配置游戏设置"><a href="#5-2-配置游戏设置" class="headerlink" title="5.2. 配置游戏设置"></a>5.2. 配置游戏设置</h2><p>直接在配置文件中配置世界设置过于麻烦，建议直接启动游戏创建一个存档，设置好世界和模组的设置。然后打开游戏本地存档，一般是在<code>文档/Klei/DoNotStarveTogether/</code>中，找到创建存档中<code>Master</code>文件夹中<code>leveldataoverride.lua</code>和<code>modoverrides.lua</code>文件，复制的服务器中<code>~/.klei/DoNotStarveTogether/MyDediServer/Master</code>目录中，如果需要开启洞穴，则需要将洞穴中的文件同样复制的<code>Caves</code>中。  </p>
+<h2 id="5-3-服务器配置"><a href="#5-3-服务器配置" class="headerlink" title="5.3. 服务器配置"></a>5.3. 服务器配置</h2><p>服务器相关配置文件在<code>~/.klei/DoNotStarveTogether/MyDediServer/cluster.ini</code>文件中。配置文件详解：<br>    <figure class="highlight nix"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nix">[MISC]<br><span class="hljs-attr">max_snapshots</span> = <span class="hljs-number">6</span>                  <span class="hljs-comment"># 最大快照数，决定了可回滚的天数</span><br><span class="hljs-attr">console_enabled</span> = <span class="hljs-literal">true</span>             <span class="hljs-comment"># 是否开启控制台</span><br><br>[SHARD]<br><span class="hljs-attr">shard_enabled</span> = <span class="hljs-literal">true</span>               <span class="hljs-comment"># 服务器共享，要开启洞穴服务器的必须启用</span><br><span class="hljs-attr">bind_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>                <span class="hljs-comment"># 服务器监听的地址，当所有实例都运行在同一台机器时，可填写 127.0.0.1，会被 server .ini 覆盖</span><br><span class="hljs-attr">master_ip</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>              <span class="hljs-comment"># master 服务器的 IP，针对非 master 服务器，若与 master 服务器运行在同一台机器时，可填写 127.0.0.1，会被 server.ini 覆盖</span><br><span class="hljs-attr">master_port</span> = <span class="hljs-number">10888</span>                <span class="hljs-comment"># 监听 master 服务器的 UDP 端口，所有连接至 master 服务器的非 master 服务器必须相同</span><br><span class="hljs-attr">cluster_key</span> = dst                  <span class="hljs-comment"># 连接密码，每台服务器必须相同，会被 server.ini 覆盖</span><br><br>[STEAM]<br><span class="hljs-attr">steam_group_only</span> = <span class="hljs-literal">false</span>           <span class="hljs-comment"># 只允许某 Steam 组的成员加入</span><br><span class="hljs-attr">steam_group_id</span> = <span class="hljs-number">0</span>                 <span class="hljs-comment"># 指定某个 Steam 组，填写组 ID</span><br><span class="hljs-attr">steam_group_admins</span> = <span class="hljs-literal">false</span>         <span class="hljs-comment"># 开启后，Steam 组的管理员拥有服务器的管理权限</span><br><br>[NETWORK]<br><span class="hljs-attr">offline_server</span> = <span class="hljs-literal">false</span>             <span class="hljs-comment"># 离线服务器，只有局域网用户能加入，并且所有依赖于 Steam 的任何功能都无效，比如说饰品掉落</span><br><span class="hljs-attr">tick_rate</span> = <span class="hljs-number">15</span>                     <span class="hljs-comment"># 每秒通信次数，越高游戏体验越好，但是会加大服务器负担</span><br><span class="hljs-attr">whitelist_slots</span> = <span class="hljs-number">0</span>                <span class="hljs-comment"># 为白名单用户保留的游戏位</span><br><span class="hljs-attr">cluster_password</span> =                 <span class="hljs-comment"># 游戏密码，不设置表示无密码</span><br><span class="hljs-attr">cluster_name</span> = server_name         <span class="hljs-comment"># 游戏房间名称</span><br><span class="hljs-attr">cluster_description</span> = description  <span class="hljs-comment"># 游戏房间描述</span><br><span class="hljs-attr">lan_only_cluster</span> = <span class="hljs-literal">false</span>           <span class="hljs-comment"># 局域网游戏</span><br><span class="hljs-attr">cluster_intention</span> = madness        <span class="hljs-comment"># 游戏偏好，可选 cooperative, competitive, social, or madness，随便设置，没卵用</span><br><br>[GAMEPLAY]<br><span class="hljs-attr">max_players</span> = <span class="hljs-number">16</span>                   <span class="hljs-comment"># 最大游戏人数</span><br><span class="hljs-attr">pvp</span> = <span class="hljs-literal">true</span>                         <span class="hljs-comment"># 能不能攻击其他玩家，能不能给其他玩家喂屎</span><br><span class="hljs-attr">game_mode</span> = survival               <span class="hljs-comment"># 游戏模式，可选 survival, endless or wilderness，与玩家死亡后的负面影响有关</span><br><span class="hljs-attr">pause_when_empty</span> = <span class="hljs-literal">false</span>           <span class="hljs-comment"># 没人服务器暂停，刷天数必备</span><br><span class="hljs-attr">vote_kick_enabled</span> = <span class="hljs-literal">false</span>          <span class="hljs-comment"># 投票踢人  </span><br></code></pre></div></td></tr></table></figure><br>独立配置文件 <code>~/.klei/DoNotStarveTogether/MyDediServer/Master/server.ini</code> :<br>    <figure class="highlight lua"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lua">[SHARD]<br>is_master = <span class="hljs-literal">true</span> /<span class="hljs-literal">false</span>      # 是否是 master 服务器，只能存在一个 <span class="hljs-literal">true</span>，其他全是 <span class="hljs-literal">false</span><br>name = caves                 # 针对非 master 服务器的名称<br>id = ???                     # 随机生成，不用加入该属性<br><br>[STEAM]<br>authentication_port = <span class="hljs-number">8766</span>   # Steam 用的端口，确保每个实例都不相同<br>master_server_port = <span class="hljs-number">27016</span>   # Steam 用的端口，确保每个实例都不相同<br><br>[NETWORK]<br>server_port = <span class="hljs-number">10999</span>          # 监听的 UDP 端口，只能介于 <span class="hljs-number">10998</span> - <span class="hljs-number">11018</span> 之间，确保每个实例都不相同<br></code></pre></div></td></tr></table></figure></p>
+<h2 id="5-4-模组配置"><a href="#5-4-模组配置" class="headerlink" title="5.4. 模组配置"></a>5.4. 模组配置</h2><p>模组需要在游戏目录 <code>/home/dst/server_dst/mods</code> 中的 <code>dedicated_server_mods_setup.lua</code> 文件中添加每个模组，或者直接添加模组集合。建议在创意工坊中创建服务器模组集合，方便使用。</p>
+<figure class="highlight lua"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lua"><span class="hljs-comment">-- id可以在创意工坊中模组或者集合的链接里找到</span><br><span class="hljs-comment">-- 添加单个模组，</span><br>ServerModSetup(<span class="hljs-string">&quot;350811795&quot;</span>)<br><span class="hljs-comment">-- 添加模组集合</span><br>ServerModCollectionSetup(<span class="hljs-string">&quot;379114180&quot;</span>)<br></code></pre></div></td></tr></table></figure>
+<p>模组的配置则在 <code>modoverrides.lua</code>，需要 <code>Master</code> 和 <code>Caves</code> 中各一份。上一步中已经将模组的配置文件复制了。  </p>
+<h2 id="5-5-可选配置文件"><a href="#5-5-可选配置文件" class="headerlink" title="5.5. 可选配置文件"></a>5.5. 可选配置文件</h2><h3 id="5-5-1-管理员设置"><a href="#5-5-1-管理员设置" class="headerlink" title="5.5.1 管理员设置"></a>5.5.1 管理员设置</h3><p>获取用户ID( <code>KU_</code> 开头的id)<br>    1.  让该玩家加入游戏，再查看日志，在日志中找用户id。<br>    2.  让该玩家点击游戏主页面的 <code>Account</code> 按钮（和获得 <code>token</code> 一样），在页面中会有用户id<br>在 <code>~/.klei/DoNotStarveTogether/MyDediServer/</code>中创建<code>adminlist.txt</code>文件。并将上述得到的用户id，每行一个写入文件。</p>
+<h3 id="5-5-2-黑名单"><a href="#5-5-2-黑名单" class="headerlink" title="5.5.2 黑名单"></a>5.5.2 黑名单</h3><p>将日志中的用户id写入到 <code>blocklist.txt</code> 文件中</p>
+<h3 id="5-5-3-白名单"><a href="#5-5-3-白名单" class="headerlink" title="5.5.3 白名单"></a>5.5.3 白名单</h3><p>需要先在 <code>cluster.ini</code> 配置文件中配置 <code>whitelist_slots</code>，白名单席位会占用最大游戏人数。<br>将用户id写入到 <code>whitelist.txt</code>中</p>
+<h1 id="6-运行和维护脚本"><a href="#6-运行和维护脚本" class="headerlink" title="6. 运行和维护脚本"></a>6. 运行和维护脚本</h1><p>目录 <code>/home/dst/server_dst/bin</code>  </p>
+<figure class="highlight shell"><figcaption><span>start.sh</span></figcaption><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 启动地上世界服务器</span><br>./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>start2.sh</span></figcaption><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash"> 启动洞穴服务器</span><br>./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>restart.sh</span></figcaption><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">!/bin/sh</span><br><span class="hljs-meta">#</span><span class="bash"> launch of server Overworld</span><br><br><span class="hljs-meta">#</span><span class="bash">Path Directory</span><br>name_folder=&quot;/home/dst/server_dst/bin&quot;<br><br><span class="hljs-meta">#</span><span class="bash">Command line</span><br>start_overworld=&quot;sh start.sh&quot;<br><br><span class="hljs-meta">#</span><span class="bash">Start or Restart the server</span><br>screen -dr dst_server1 -X -S quit<br>cd $&#123;name_folder&#125;<br>screen -dmS dst_server1 $&#123;start_overworld&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>restart2.sh</span></figcaption><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">!/bin/sh</span><br><span class="hljs-meta">#</span><span class="bash"> launch of server Cave</span><br><br><span class="hljs-meta">#</span><span class="bash">Path Directory</span><br>name_folder=&quot;/home/dst/server_dst/bin&quot;<br><br><span class="hljs-meta">#</span><span class="bash">Command line</span><br>start_cave=&quot;sh start2.sh&quot;<br><br><span class="hljs-meta">#</span><span class="bash">Start or Restart the server</span><br>screen -dr dst_server2 -X -S quit<br>cd $&#123;name_folder&#125;<br>screen -dmS dst_server2 $&#123;start_cave&#125;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>update.sh</span></figcaption><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">update of server</span><br>screen -dr dst_server1 -X quit<br>screen -dr dst_server2 -X quit<br>cp /home/dst/server_dst/mods/dedicated_server_mods_setup.lua /home/dst/server_dst/mods/dedicated_server_mods_setup.lua.bak<br>cd /home/dst/steamcmd<br>./steamcmd.sh +login anonymous +force_install_dir /home/dst/server_dst +app_update 343050 validate +quit<br>sleep 10<br>cp /home/dst/server_dst/mods/dedicated_server_mods_setup.lua.bak /home/dst/server_dst/mods/dedicated_server_mods_setup.lua<br>sh /home/dst/server_dst/bin/restart.sh<br>sh /home/dst/server_dst/bin/restart2.sh<br></code></pre></div></td></tr></table></figure>
+<h1 id="7-游戏开服后修改世界配置。"><a href="#7-游戏开服后修改世界配置。" class="headerlink" title="7. 游戏开服后修改世界配置。"></a>7. 游戏开服后修改世界配置。</h1><p>游戏玩的正嗨，发现服务器没有关掉<strong>疾病</strong>。或者玩的太菜，死的太多，想调整四季的时长。都可以管理员通过在游戏内的按 <code>~</code> 控制台来调整，按 <code>Ctrl</code> 键来修改<code>Remote</code>和<code>Local</code>，以下命令需要在 <code>Remote</code> 中运行。  </p>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-comment"># 去掉疾病</span><br><span class="hljs-attr">TheWorld.topology.overrides.disease_delay</span> = <span class="hljs-string">&quot;none&quot;</span><br></code></pre></div></td></tr></table></figure>
+<p>然后重启服务器即可。</p>
+<h1 id="8-写在最后"><a href="#8-写在最后" class="headerlink" title="8. 写在最后"></a>8. 写在最后</h1><p>由于饥荒只吃单核性能，没有多核优化。随着游戏的进行，建筑、物品、怪物等数量的上升，到100多200天的时候不可避免的会出现卡顿，所以在游戏开始之前最好将游戏地图不要设置过大，资源怪物数量调小等，这样可以延缓卡顿来临的时间。当然最大的难点其实是如何找到和你一块玩饥荒那么多天的的朋友。</p>
+<h1 id="9-参考"><a href="#9-参考" class="headerlink" title="9. 参考"></a>9. 参考</h1><p><a target="_blank" rel="noopener" href="https://developer.valvesoftware.com/wiki/SteamCMD">SteamCMD使用Wiki</a><br><a target="_blank" rel="noopener" href="https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers">Klei官方服务器教程 其一</a><br><a target="_blank" rel="noopener" href="https://steamcommunity.com/sharedfiles/filedetails/?id=590565473">Klei官方服务器教程 其二</a><br><a target="_blank" rel="noopener" href="http://blog.ttionya.com/article-1233.html">饥荒联机独立服务器搭建教程（二）：Linux篇</a></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F/%E9%A5%A5%E8%8D%92/">饥荒</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B8%B8%E6%88%8F/">游戏</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/">服务器</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%A5%A5%E8%8D%92/">饥荒</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
